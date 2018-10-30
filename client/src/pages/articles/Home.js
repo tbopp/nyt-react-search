@@ -6,7 +6,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
-class Articles extends Component {
+class Home extends Component {
   // Setting our component's initial state
   state = {
     articles: [],
@@ -65,26 +65,20 @@ class Articles extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>What Articles Should I Read?</h1>
             </Jumbotron>
             <form>
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
+                name="Topic"
+                placeholder="Topic (required)"
               />
               <Input
-                value={this.state.author}
+                value={this.state.date}
                 onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
+                name="date"
+                placeholder="date (required)"
               />
               <FormBtn
                 disabled={!(this.state.author && this.state.title)}
@@ -123,4 +117,4 @@ class Articles extends Component {
   }
 }
 
-export default Books;
+export default Home;
