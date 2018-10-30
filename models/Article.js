@@ -4,24 +4,31 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new UserSchema object
-const articleSchema = new Schema({
+const ArticleSchema = new Schema({
   title: {
     type: String,
-    required: true
+    required: true,
+    default: "No title available."
   },
   date: {
     type: Date,
-    required: true
+    required: true,
+    default: Date.now
   },
   url: {
     type: String,
-    required: true
+    required: true,
+    default: "https://www.nytimes.com/"
+  },
+  snippet: {
+    type: String,
+    required: true,
+    default: "No snippet available."
   }
-  
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Article = mongoose.model("Article", articleSchema);
+const Article = mongoose.model("Article", ArticleSchema);
 
 // Export the Article model
 module.exports = Article;
