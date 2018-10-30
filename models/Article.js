@@ -1,10 +1,10 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 // Save a reference to the Schema constructor
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new UserSchema object
-var ArticleSchema = new Schema({
+const articleSchema = new Schema({
   title: {
     type: String,
     required: true
@@ -16,13 +16,12 @@ var ArticleSchema = new Schema({
   url: {
     type: String,
     required: true
-  },
-    timestamps: true
+  }
   
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Article = mongoose.model("Article", ArticleSchema);
+var Article = mongoose.model("Article", articleSchema);
 
 // Export the Article model
 module.exports = Article;
